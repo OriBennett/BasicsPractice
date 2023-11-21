@@ -37,38 +37,58 @@
             //int newPI2 = (int)pi; //casting
             //Console.WriteLine(newPI2);
 
-            //Arithmatic
-            int friends = 5;
-            friends = friends + 1;
-            Console.WriteLine(friends);
-            friends += 2;
-            Console.WriteLine(friends);
-            friends++;
-            Console.WriteLine(friends);
+            ////Arithmatic
+            //int friends = 5;
+            //friends = friends + 1;
+            //Console.WriteLine(friends);
+            //friends += 2;
+            //Console.WriteLine(friends);
+            //friends++;
+            //Console.WriteLine(friends);
 
-            friends = friends - 1;
-            Console.WriteLine(friends);
-            friends -= 2;
-            Console.WriteLine(friends);
-            friends--;
-            Console.WriteLine(friends);
+            //friends = friends - 1;
+            //Console.WriteLine(friends);
+            //friends -= 2;
+            //Console.WriteLine(friends);
+            //friends--;
+            //Console.WriteLine(friends);
 
-            friends = friends * 2;
-            Console.WriteLine(friends);
-            friends *= 2;
-            Console.WriteLine(friends);
+            //friends = friends * 2;
+            //Console.WriteLine(friends);
+            //friends *= 2;
+            //Console.WriteLine(friends);
 
-            friends = friends / 2;
-            Console.WriteLine(friends);
-            friends /= 2;
-            Console.WriteLine(friends);
+            //friends = friends / 2;
+            //Console.WriteLine(friends);
+            //friends /= 2;
+            //Console.WriteLine(friends);
 
-            friends = friends % 3;
-            Console.WriteLine(friends);
-            friends %= 2;
-            Console.WriteLine(friends);
-            
+            //friends = friends % 3;
+            //Console.WriteLine(friends);
+            //friends %= 2;
+            //Console.WriteLine(friends);
 
+            //Math Class
+
+            double a = 3;
+            double b = 5;
+            double sq = Math.Pow(a, 3);
+            Console.WriteLine(sq);
+            double rt = Math.Sqrt(a);
+            a = -a;
+            double ab = Math.Abs(a);
+            Console.WriteLine(ab);
+            a += 0.14;
+            double round = Math.Round(a);
+            Console.WriteLine(round);
+            double ceiling = Math.Ceiling(a);
+            Console.WriteLine(ceiling);
+            double floor = Math.Floor(a);
+            Console.WriteLine(floor);
+            double max = Math.Max(a, b);
+            Console.WriteLine(max);
+            double min = Math.Min(a, b);
+            Console.WriteLine(min);
 
         }
     }
