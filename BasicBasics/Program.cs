@@ -1,5 +1,7 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace BasicBasics
 {
@@ -173,6 +175,35 @@ namespace BasicBasics
             Console.WriteLine(result);
 
             //These three are the same
+
+            result = $@"C:\Demo\{firstName}{lastName}\test.txt";  //interpolation and string literal, cool
+            Console.WriteLine(result);
+
+            result = $@"C:\Demo\{firstName}{lastName}\{"\""}test.txt{"\""}";  //interpolation and string literal and escape character, cool
+            Console.WriteLine(result);
+
+            //This is why stringbuilder is so important:
+
+            Stopwatch StringStopWatch = new Stopwatch();
+            StringStopWatch.Start();
+            string test = "";
+            for (int i = 0; i < 100000; i++)
+            {
+                test += i;
+            }
+            StringStopWatch.Stop();
+            Console.WriteLine($"String Stopwatch: {StringStopWatch.ElapsedMilliseconds}ms"); //This took around 6 seconds
+
+
+            Stopwatch BuilderStopWatch = new Stopwatch();
+            BuilderStopWatch.Start();
+            StringBuilder builderTest = new();
+            for (int i = 0; i < 100000; i++)
+            {
+                builderTest.Append(i);
+            }
+            BuilderStopWatch.Stop();
+            Console.WriteLine($"Builder Stopwatch: {BuilderStopWatch.ElapsedMilliseconds}ms"); //this didn't even get to 1ms
 
 
         }
