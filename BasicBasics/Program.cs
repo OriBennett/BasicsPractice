@@ -109,7 +109,22 @@ namespace BasicBasics
             //GetItems for retriving an item from an array (with Generics) (can also be used to get a single Item)
             //RandomNumberGenerator now has GetHexString and GetString for returning cryptographically secure strings.
 
-            //Hypotanues Calculator Program
+            //Hypotenues Calculator Program
+
+            Console.WriteLine("Hypotenuse Calculator");
+            Console.Write("Enter side A: ");
+            double A = Convert.ToDouble(Console.ReadLine()); //I'll deal with checking inputs at a later time
+            Console.Write("Enter side B: ");
+            double B = Convert.ToDouble(Console.ReadLine());
+
+            double C = Math.Sqrt((A*A) + (B*B));
+            Console.WriteLine("The hypotenuse, side C is: " + C);
+
+
+            //Strings
+
+            //Remember, Strings are immutable. If you need to play around with them a lot, you should probably use StringBuilder
+
 
 
 
