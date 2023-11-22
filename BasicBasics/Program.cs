@@ -124,86 +124,127 @@ namespace BasicBasics
             //Console.WriteLine("The hypotenuse, side C is: " + C);
 
 
-            //Strings
+            ////Strings
 
-            //Remember, Strings are immutable. If you need to play around with them a lot, you should probably use StringBuilder
+            ////Remember, Strings are immutable. If you need to play around with them a lot, you should probably use StringBuilder
 
-            string testString = "tHis iS tHe FBI Calling!";
+            //string testString = "tHis iS tHe FBI Calling!";
+            //string result;
+
+            //result = testString.ToLower();
+            //Console.WriteLine(result);
+
+            //result = testString.ToUpper();
+            //Console.WriteLine(result);
+
+            //TextInfo currentTextInfo = CultureInfo.CurrentCulture.TextInfo;
+            //result = currentTextInfo.ToTitleCase(testString);
+            //Console.WriteLine(result);
+
+            //TextInfo englishTextInfo = new CultureInfo("en-US", false).TextInfo;
+            //result = englishTextInfo.ToTitleCase(testString);
+            //Console.WriteLine(result);
+
+            //Console.WriteLine("cool");
+
+            //testString = "Bennett";
+            //for (int i = 0; i < testString.Length; i++)  //Playing with strings as arrays
+            //{
+            //    Console.WriteLine(testString[i]);
+            //}
+
+            //testString = "This is a \"test\" String"; //escape chars
+            //Console.WriteLine(testString);
+
+            //testString = "C:\\Demo\\Test.txt"; //escaping escape chars
+            //Console.WriteLine(testString);
+
+            //testString = @"C:\Demo\test.txt"; //String literal
+            //Console.WriteLine(testString);
+
+            //string firstName = "Ori";
+            //string lastName = "Bennett";
+
+            //result = "My name is " + lastName + ", " + firstName + " " + lastName;
+            //Console.WriteLine(result);
+
+            //result = String.Format("My name is {0}, {1} {0}", lastName, firstName);
+            //Console.WriteLine(result);
+
+            //result = $"My name is {lastName}, {firstName} {lastName}";
+            //Console.WriteLine(result);
+
+            ////These three are the same
+
+            //result = $@"C:\Demo\{firstName}{lastName}\test.txt";  //interpolation and string literal, cool
+            //Console.WriteLine(result);
+
+            //result = $@"C:\Demo\{firstName}{lastName}\{"\""}test.txt{"\""}";  //interpolation and string literal and escape character, cool
+            //Console.WriteLine(result);
+
+            ////This is why stringbuilder is so important:
+
+            //Stopwatch StringStopWatch = new Stopwatch();
+            //StringStopWatch.Start();
+            //string test = "";
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    test += i;
+            //}
+            //StringStopWatch.Stop();
+            //Console.WriteLine($"String Stopwatch: {StringStopWatch.ElapsedMilliseconds}ms"); //This took around 6 seconds
+
+
+            //Stopwatch BuilderStopWatch = new Stopwatch();
+            //BuilderStopWatch.Start();
+            //StringBuilder builderTest = new();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    builderTest.Append(i);
+            //}
+            //BuilderStopWatch.Stop();
+            //Console.WriteLine($"Builder Stopwatch: {BuilderStopWatch.ElapsedMilliseconds}ms"); //this didn't even get to 1ms
+
+            int[] ages = { 6, 7, 8, 3, 5, 4, 5, 6, 7, };
             string result;
 
-            result = testString.ToLower();
+            result = String.Concat(ages);
             Console.WriteLine(result);
 
-            result = testString.ToUpper();
+            result = string.Join(",", ages);
             Console.WriteLine(result);
 
-            TextInfo currentTextInfo = CultureInfo.CurrentCulture.TextInfo;
-            result = currentTextInfo.ToTitleCase(testString);
-            Console.WriteLine(result);
+            string testString = "John,Tim,Mary,Sue,Bob,Jane";
+            string[] resultArray = testString.Split(',');
+            Array.ForEach(resultArray, x => Console.WriteLine(x)); //also practicing lambda, nice.
+            Console.WriteLine();
 
-            TextInfo englishTextInfo = new CultureInfo("en-US", false).TextInfo;
-            result = englishTextInfo.ToTitleCase(testString);
-            Console.WriteLine(result);
+            testString = "John, Tim, Mary, Sue, Bob, Jane";
+            resultArray = testString.Split(", ");
+            Array.ForEach(resultArray, x => Console.WriteLine(x));
+            Console.WriteLine();
 
-            Console.WriteLine("cool");
+            //Trim and Pad
+            testString = "       Hello World         ";
+            result = testString.TrimStart();
+            Console.WriteLine($"'{result}'");
 
-            testString = "Bennett";
-            for (int i = 0; i < testString.Length; i++)  //Playing with strings as arrays
-            {
-                Console.WriteLine(testString[i]);
-            }
+            result = testString.TrimEnd();
+            Console.WriteLine($"'{result}'");
 
-            testString = "This is a \"test\" String"; //escape chars
-            Console.WriteLine(testString);
+            result = testString.Trim();
+            Console.WriteLine($"'{result}'");
 
-            testString = "C:\\Demo\\Test.txt"; //escaping escape chars
-            Console.WriteLine(testString);
+            testString = "1.15";
+            result = testString.PadLeft(10, '0');
+            Console.WriteLine(result );
 
-            testString = @"C:\Demo\test.txt"; //String literal
-            Console.WriteLine(testString);
+            result = testString.PadRight(10, '0');
+            Console.WriteLine(result );
 
-            string firstName = "Ori";
-            string lastName = "Bennett";
+            result = testString.PadRight(10);
+            Console.WriteLine($"'{result}'");
 
-            result = "My name is " + lastName + ", " + firstName + " " + lastName;
-            Console.WriteLine(result);
-
-            result = String.Format("My name is {0}, {1} {0}", lastName, firstName);
-            Console.WriteLine(result);
-
-            result = $"My name is {lastName}, {firstName} {lastName}";
-            Console.WriteLine(result);
-
-            //These three are the same
-
-            result = $@"C:\Demo\{firstName}{lastName}\test.txt";  //interpolation and string literal, cool
-            Console.WriteLine(result);
-
-            result = $@"C:\Demo\{firstName}{lastName}\{"\""}test.txt{"\""}";  //interpolation and string literal and escape character, cool
-            Console.WriteLine(result);
-
-            //This is why stringbuilder is so important:
-
-            Stopwatch StringStopWatch = new Stopwatch();
-            StringStopWatch.Start();
-            string test = "";
-            for (int i = 0; i < 100000; i++)
-            {
-                test += i;
-            }
-            StringStopWatch.Stop();
-            Console.WriteLine($"String Stopwatch: {StringStopWatch.ElapsedMilliseconds}ms"); //This took around 6 seconds
-
-
-            Stopwatch BuilderStopWatch = new Stopwatch();
-            BuilderStopWatch.Start();
-            StringBuilder builderTest = new();
-            for (int i = 0; i < 100000; i++)
-            {
-                builderTest.Append(i);
-            }
-            BuilderStopWatch.Stop();
-            Console.WriteLine($"Builder Stopwatch: {BuilderStopWatch.ElapsedMilliseconds}ms"); //this didn't even get to 1ms
 
 
         }
