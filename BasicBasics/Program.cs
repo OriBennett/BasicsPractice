@@ -70,55 +70,55 @@ namespace BasicBasics
             //friends %= 2;
             //Console.WriteLine(friends);
 
-            //Math Class
+            ////Math Class
 
-            double a = 3;
-            double b = 5;
-            double sq = Math.Pow(a, 3);
-            Console.WriteLine(sq);
-            double rt = Math.Sqrt(a);
-            a = -a;
-            double ab = Math.Abs(a);
-            Console.WriteLine(ab);
-            a += 0.14;
-            double round = Math.Round(a);
-            Console.WriteLine(round);
-            double ceiling = Math.Ceiling(a);
-            Console.WriteLine(ceiling);
-            double floor = Math.Floor(a);
-            Console.WriteLine(floor);
-            double max = Math.Max(a, b);
-            Console.WriteLine(max);
-            double min = Math.Min(a, b);
-            Console.WriteLine(min);
+            //double a = 3;
+            //double b = 5;
+            //double sq = Math.Pow(a, 3);
+            //Console.WriteLine(sq);
+            //double rt = Math.Sqrt(a);
+            //a = -a;
+            //double ab = Math.Abs(a);
+            //Console.WriteLine(ab);
+            //a += 0.14;
+            //double round = Math.Round(a);
+            //Console.WriteLine(round);
+            //double ceiling = Math.Ceiling(a);
+            //Console.WriteLine(ceiling);
+            //double floor = Math.Floor(a);
+            //Console.WriteLine(floor);
+            //double max = Math.Max(a, b);
+            //Console.WriteLine(max);
+            //double min = Math.Min(a, b);
+            //Console.WriteLine(min);
 
-            //Random
+            ////Random
 
-            Random random = new Random();
-            Console.WriteLine(random.Next());
-            Console.WriteLine(Random.Shared.Next());
-            Console.WriteLine(random.NextDouble());
+            //Random random = new Random();
+            //Console.WriteLine(random.Next());
+            //Console.WriteLine(Random.Shared.Next());
+            //Console.WriteLine(random.NextDouble());
             
-            //RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();  //Don't do this!!!
-            //Cryptographically secure randomness RandomNumberGenerator
+            ////RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();  //Don't do this!!!
+            ////Cryptographically secure randomness RandomNumberGenerator
 
-            Console.WriteLine(RandomNumberGenerator.GetInt32(0,int.MaxValue));
+            //Console.WriteLine(RandomNumberGenerator.GetInt32(0,int.MaxValue));
 
-            //IN .NET8 there are now new uses for both Random and RandomNumberGenerator:
-            //Shuffle for shuffleing arrays or spans
-            //GetItems for retriving an item from an array (with Generics) (can also be used to get a single Item)
-            //RandomNumberGenerator now has GetHexString and GetString for returning cryptographically secure strings.
+            ////IN .NET8 there are now new uses for both Random and RandomNumberGenerator:
+            ////Shuffle for shuffleing arrays or spans
+            ////GetItems for retriving an item from an array (with Generics) (can also be used to get a single Item)
+            ////RandomNumberGenerator now has GetHexString and GetString for returning cryptographically secure strings.
 
-            //Hypotenues Calculator Program
+            ////Hypotenues Calculator Program
 
-            Console.WriteLine("Hypotenuse Calculator");
-            Console.Write("Enter side A: ");
-            double A = Convert.ToDouble(Console.ReadLine()); //I'll deal with checking inputs at a later time
-            Console.Write("Enter side B: ");
-            double B = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("Hypotenuse Calculator");
+            //Console.Write("Enter side A: ");
+            //double A = Convert.ToDouble(Console.ReadLine()); //I'll deal with checking inputs at a later time
+            //Console.Write("Enter side B: ");
+            //double B = Convert.ToDouble(Console.ReadLine());
 
-            double C = Math.Sqrt((A*A) + (B*B));
-            Console.WriteLine("The hypotenuse, side C is: " + C);
+            //double C = Math.Sqrt((A*A) + (B*B));
+            //Console.WriteLine("The hypotenuse, side C is: " + C);
 
 
             //Strings
