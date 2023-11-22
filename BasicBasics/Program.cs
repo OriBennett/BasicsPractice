@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Globalization;
+using System.Security.Cryptography;
 
 namespace BasicBasics
 {
@@ -98,7 +99,7 @@ namespace BasicBasics
             //Console.WriteLine(random.Next());
             //Console.WriteLine(Random.Shared.Next());
             //Console.WriteLine(random.NextDouble());
-            
+
             ////RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();  //Don't do this!!!
             ////Cryptographically secure randomness RandomNumberGenerator
 
@@ -125,7 +126,53 @@ namespace BasicBasics
 
             //Remember, Strings are immutable. If you need to play around with them a lot, you should probably use StringBuilder
 
+            string testString = "tHis iS tHe FBI Calling!";
+            string result;
 
+            result = testString.ToLower();
+            Console.WriteLine(result);
+
+            result = testString.ToUpper();
+            Console.WriteLine(result);
+
+            TextInfo currentTextInfo = CultureInfo.CurrentCulture.TextInfo;
+            result = currentTextInfo.ToTitleCase(testString);
+            Console.WriteLine(result);
+
+            TextInfo englishTextInfo = new CultureInfo("en-US", false).TextInfo;
+            result = englishTextInfo.ToTitleCase(testString);
+            Console.WriteLine(result);
+
+            Console.WriteLine("cool");
+
+            testString = "Bennett";
+            for (int i = 0; i < testString.Length; i++)  //Playing with strings as arrays
+            {
+                Console.WriteLine(testString[i]);
+            }
+
+            testString = "This is a \"test\" String"; //escape chars
+            Console.WriteLine(testString);
+
+            testString = "C:\\Demo\\Test.txt"; //escaping escape chars
+            Console.WriteLine(testString);
+
+            testString = @"C:\Demo\test.txt"; //String literal
+            Console.WriteLine(testString);
+
+            string firstName = "Ori";
+            string lastName = "Bennett";
+
+            result = "My name is " + lastName + ", " + firstName + " " + lastName;
+            Console.WriteLine(result);
+
+            result = String.Format("My name is {0}, {1} {0}", lastName, firstName);
+            Console.WriteLine(result);
+
+            result = $"My name is {lastName}, {firstName} {lastName}";
+            Console.WriteLine(result);
+
+            //These three are the same
 
 
         }
