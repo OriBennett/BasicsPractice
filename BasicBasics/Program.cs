@@ -1,4 +1,6 @@
-﻿namespace BasicBasics
+﻿using System.Security.Cryptography;
+
+namespace BasicBasics
 {
     internal class Program
     {
@@ -89,6 +91,27 @@
             Console.WriteLine(max);
             double min = Math.Min(a, b);
             Console.WriteLine(min);
+
+            //Random
+
+            Random random = new Random();
+            Console.WriteLine(random.Next());
+            Console.WriteLine(Random.Shared.Next());
+            Console.WriteLine(random.NextDouble());
+            
+            //RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();  //Don't do this!!!
+            //Cryptographically secure randomness RandomNumberGenerator
+
+            Console.WriteLine(RandomNumberGenerator.GetInt32(0,int.MaxValue));
+
+            //IN .NET8 there are now new uses for both Random and RandomNumberGenerator:
+            //Shuffle for shuffleing arrays or spans
+            //GetItems for retriving an item from an array (with Generics) (can also be used to get a single Item)
+            //RandomNumberGenerator now has GetHexString and GetString for returning cryptographically secure strings.
+
+            //Hypotanues Calculator Program
+
+
 
         }
     }
