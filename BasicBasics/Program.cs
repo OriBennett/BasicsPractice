@@ -293,10 +293,13 @@ namespace BasicBasics
 
             //went over ifs, switches, logical operators (&&, ||), while loops, for loops
 
+
+            //Number guessing game
+
             Console.WriteLine("Number gussing game:");
             Console.WriteLine("Please guess a number between 1-100, What's your guess?");
             int guess;
-            int answer = Random.Shared.Next(1, 100);
+            int answer = Random.Shared.Next(1, 101);
 
             guess = Convert.ToInt32(Console.ReadLine());
 
@@ -315,6 +318,8 @@ namespace BasicBasics
             }
             Console.WriteLine("Well done! You guessed the number.");
 
+
+            //Rock,Paper,Scissors
 
         }
     }
