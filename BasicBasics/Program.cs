@@ -246,6 +246,50 @@ namespace BasicBasics
             Console.WriteLine($"'{result}'");
 
 
+            //Searchhing Strings
+
+            testString = "This is a test of the search. Let's see how its testing works out.";
+            bool resultsBoolean = false;
+            int resultsInt = 0;
+
+            Console.WriteLine(testString);
+
+            resultsBoolean = testString.StartsWith("This is");
+            Console.WriteLine($"Starts with \"This is\": {resultsBoolean}");
+
+            resultsBoolean = testString.StartsWith("ThIs is");
+            Console.WriteLine($"Starts with \"ThIs is\": {resultsBoolean}");
+
+            resultsBoolean = testString.EndsWith("works out.");
+            Console.WriteLine($"Ends with \"works out.\": {resultsBoolean}");
+
+            resultsBoolean = testString.StartsWith("work out.");
+            Console.WriteLine($"Ends with \"work out.\": {resultsBoolean}");
+
+            resultsBoolean = testString.Contains("test");
+            Console.WriteLine($"Contains \"test\": {resultsBoolean}");
+
+            resultsBoolean = testString.Contains("tests");
+            Console.WriteLine($"Contains \"tests\": {resultsBoolean}");
+
+            resultsInt = testString.IndexOf("test");
+            Console.WriteLine($"Index of \"test\" is: {resultsInt}");
+
+            resultsInt = testString.IndexOf("test", 11);
+            Console.WriteLine($"Index of \"test\" after 11 is: {resultsInt}");
+
+            resultsInt = testString.IndexOf("test", 49);
+            Console.WriteLine($"Index of \"test\" after 48 is: {resultsInt}"); //returns -1 which is "not found"
+
+            resultsInt = testString.LastIndexOf("test");
+            Console.WriteLine($"Last Index of \"test\" is: {resultsInt}");
+
+            resultsInt = testString.LastIndexOf("test", 11);
+            Console.WriteLine($"Last Index of \"test\" before 10 is: {resultsInt}");
+
+            resultsInt = testString.LastIndexOf("test", 49);
+            Console.WriteLine($"LastIndex of \"test\" before 48 is: {resultsInt}");
+
 
         }
     }
