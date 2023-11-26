@@ -205,90 +205,115 @@ namespace BasicBasics
             //BuilderStopWatch.Stop();
             //Console.WriteLine($"Builder Stopwatch: {BuilderStopWatch.ElapsedMilliseconds}ms"); //this didn't even get to 1ms
 
-            int[] ages = { 6, 7, 8, 3, 5, 4, 5, 6, 7, };
-            string result;
+            //int[] ages = { 6, 7, 8, 3, 5, 4, 5, 6, 7, };
+            //string result;
 
-            result = String.Concat(ages);
-            Console.WriteLine(result);
+            //result = String.Concat(ages);
+            //Console.WriteLine(result);
 
-            result = string.Join(",", ages);
-            Console.WriteLine(result);
+            //result = string.Join(",", ages);
+            //Console.WriteLine(result);
 
-            string testString = "John,Tim,Mary,Sue,Bob,Jane";
-            string[] resultArray = testString.Split(',');
-            Array.ForEach(resultArray, x => Console.WriteLine(x)); //also practicing lambda, nice.
-            Console.WriteLine();
+            //string testString = "John,Tim,Mary,Sue,Bob,Jane";
+            //string[] resultArray = testString.Split(',');
+            //Array.ForEach(resultArray, x => Console.WriteLine(x)); //also practicing lambda, nice.
+            //Console.WriteLine();
 
-            testString = "John, Tim, Mary, Sue, Bob, Jane";
-            resultArray = testString.Split(", ");
-            Array.ForEach(resultArray, x => Console.WriteLine(x));
-            Console.WriteLine();
+            //testString = "John, Tim, Mary, Sue, Bob, Jane";
+            //resultArray = testString.Split(", ");
+            //Array.ForEach(resultArray, x => Console.WriteLine(x));
+            //Console.WriteLine();
 
-            //Trim and Pad
-            testString = "       Hello World         ";
-            result = testString.TrimStart();
-            Console.WriteLine($"'{result}'");
+            ////Trim and Pad
+            //testString = "       Hello World         ";
+            //result = testString.TrimStart();
+            //Console.WriteLine($"'{result}'");
 
-            result = testString.TrimEnd();
-            Console.WriteLine($"'{result}'");
+            //result = testString.TrimEnd();
+            //Console.WriteLine($"'{result}'");
 
-            result = testString.Trim();
-            Console.WriteLine($"'{result}'");
+            //result = testString.Trim();
+            //Console.WriteLine($"'{result}'");
 
-            testString = "1.15";
-            result = testString.PadLeft(10, '0');
-            Console.WriteLine(result );
+            //testString = "1.15";
+            //result = testString.PadLeft(10, '0');
+            //Console.WriteLine(result );
 
-            result = testString.PadRight(10, '0');
-            Console.WriteLine(result );
+            //result = testString.PadRight(10, '0');
+            //Console.WriteLine(result );
 
-            result = testString.PadRight(10);
-            Console.WriteLine($"'{result}'");
+            //result = testString.PadRight(10);
+            //Console.WriteLine($"'{result}'");
 
 
-            //Searchhing Strings
+            ////Searchhing Strings
 
-            testString = "This is a test of the search. Let's see how its testing works out.";
-            bool resultsBoolean = false;
-            int resultsInt = 0;
+            //testString = "This is a test of the search. Let's see how its testing works out.";
+            //bool resultsBoolean = false;
+            //int resultsInt = 0;
 
-            Console.WriteLine(testString);
+            //Console.WriteLine(testString);
 
-            resultsBoolean = testString.StartsWith("This is");
-            Console.WriteLine($"Starts with \"This is\": {resultsBoolean}");
+            //resultsBoolean = testString.StartsWith("This is");
+            //Console.WriteLine($"Starts with \"This is\": {resultsBoolean}");
 
-            resultsBoolean = testString.StartsWith("ThIs is");
-            Console.WriteLine($"Starts with \"ThIs is\": {resultsBoolean}");
+            //resultsBoolean = testString.StartsWith("ThIs is");
+            //Console.WriteLine($"Starts with \"ThIs is\": {resultsBoolean}");
 
-            resultsBoolean = testString.EndsWith("works out.");
-            Console.WriteLine($"Ends with \"works out.\": {resultsBoolean}");
+            //resultsBoolean = testString.EndsWith("works out.");
+            //Console.WriteLine($"Ends with \"works out.\": {resultsBoolean}");
 
-            resultsBoolean = testString.StartsWith("work out.");
-            Console.WriteLine($"Ends with \"work out.\": {resultsBoolean}");
+            //resultsBoolean = testString.StartsWith("work out.");
+            //Console.WriteLine($"Ends with \"work out.\": {resultsBoolean}");
 
-            resultsBoolean = testString.Contains("test");
-            Console.WriteLine($"Contains \"test\": {resultsBoolean}");
+            //resultsBoolean = testString.Contains("test");
+            //Console.WriteLine($"Contains \"test\": {resultsBoolean}");
 
-            resultsBoolean = testString.Contains("tests");
-            Console.WriteLine($"Contains \"tests\": {resultsBoolean}");
+            //resultsBoolean = testString.Contains("tests");
+            //Console.WriteLine($"Contains \"tests\": {resultsBoolean}");
 
-            resultsInt = testString.IndexOf("test");
-            Console.WriteLine($"Index of \"test\" is: {resultsInt}");
+            //resultsInt = testString.IndexOf("test");
+            //Console.WriteLine($"Index of \"test\" is: {resultsInt}");
 
-            resultsInt = testString.IndexOf("test", 11);
-            Console.WriteLine($"Index of \"test\" after 11 is: {resultsInt}");
+            //resultsInt = testString.IndexOf("test", 11);
+            //Console.WriteLine($"Index of \"test\" after 11 is: {resultsInt}");
 
-            resultsInt = testString.IndexOf("test", 49);
-            Console.WriteLine($"Index of \"test\" after 48 is: {resultsInt}"); //returns -1 which is "not found"
+            //resultsInt = testString.IndexOf("test", 49);
+            //Console.WriteLine($"Index of \"test\" after 48 is: {resultsInt}"); //returns -1 which is "not found"
 
-            resultsInt = testString.LastIndexOf("test");
-            Console.WriteLine($"Last Index of \"test\" is: {resultsInt}");
+            //resultsInt = testString.LastIndexOf("test");
+            //Console.WriteLine($"Last Index of \"test\" is: {resultsInt}");
 
-            resultsInt = testString.LastIndexOf("test", 11);
-            Console.WriteLine($"Last Index of \"test\" before 10 is: {resultsInt}");
+            //resultsInt = testString.LastIndexOf("test", 11);
+            //Console.WriteLine($"Last Index of \"test\" before 10 is: {resultsInt}");
 
-            resultsInt = testString.LastIndexOf("test", 49);
-            Console.WriteLine($"LastIndex of \"test\" before 48 is: {resultsInt}");
+            //resultsInt = testString.LastIndexOf("test", 49);
+            //Console.WriteLine($"LastIndex of \"test\" before 48 is: {resultsInt}");
+
+
+            //went over ifs, switches, logical operators (&&, ||), while loops, for loops
+
+            Console.WriteLine("Number gussing game:");
+            Console.WriteLine("Please guess a number between 1-100, What's your guess?");
+            int guess;
+            int answer = Random.Shared.Next(1, 100);
+
+            guess = Convert.ToInt32(Console.ReadLine());
+
+            while (guess != answer)
+            {
+                if (guess < answer)
+                {
+                    Console.WriteLine($"{guess} is too low");
+                }
+                else
+                {
+                    Console.WriteLine($"{guess} is too high");
+                }
+                Console.WriteLine("Guess a new number between 1-100:");
+                guess = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Well done! You guessed the number.");
 
 
         }
