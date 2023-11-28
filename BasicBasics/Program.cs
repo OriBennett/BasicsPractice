@@ -389,13 +389,16 @@ namespace BasicBasics
                 }
                 Console.WriteLine("Would you like to play again? (Y/N)");
                 //playAgainSTR = Console.ReadLine().ToUpper();
-                if (Console.ReadLine().ToUpper() == "Y")
-                {
-                    playAgain = true;
-                }
-                else { playAgain = false; }
+                //if (Console.ReadLine().ToUpper() == "Y")
+                //{
+                //    playAgain = true;
+                //}
+                //else { playAgain = false; }
+                playAgain = (Console.ReadLine().ToUpper() == "Y") ? true : false; //same as the if above, cool
             }
             Console.WriteLine("Thanks for playing.");
+
+
         }
     }
 }
