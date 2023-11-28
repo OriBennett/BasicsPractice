@@ -291,36 +291,111 @@ namespace BasicBasics
             //Console.WriteLine($"LastIndex of \"test\" before 48 is: {resultsInt}");
 
 
-            //went over ifs, switches, logical operators (&&, ||), while loops, for loops
+            ////went over ifs, switches, logical operators (&&, ||), while loops, for loops
 
 
-            //Number guessing game
+            ////Number guessing game
 
-            Console.WriteLine("Number gussing game:");
-            Console.WriteLine("Please guess a number between 1-100, What's your guess?");
-            int guess;
-            int answer = Random.Shared.Next(1, 101);
+            //Console.WriteLine("Number gussing game:");
+            //Console.WriteLine("Please guess a number between 1-100, What's your guess?");
+            //int guess;
+            //int answer = Random.Shared.Next(1, 101);
 
-            guess = Convert.ToInt32(Console.ReadLine());
+            //guess = Convert.ToInt32(Console.ReadLine());
 
-            while (guess != answer)
+            //while (guess != answer)
+            //{
+            //    if (guess < answer)
+            //    {
+            //        Console.WriteLine($"{guess} is too low");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"{guess} is too high");
+            //    }
+            //    Console.WriteLine("Guess a new number between 1-100:");
+            //    guess = Convert.ToInt32(Console.ReadLine());
+            //}
+            //Console.WriteLine("Well done! You guessed the number.");
+
+
+            //Rock,Paper,Scissors 
+
+            Console.WriteLine("Rock, Paper, Scissors:");
+
+            string playerGuess;
+            string[] optionsRPS = { "ROCK", "PAPER", "SCISSORS" };
+            int computerGuess;
+            bool playAgain = true;
+            //string playAgainSTR;
+            while (playAgain)
             {
-                if (guess < answer)
+                computerGuess = Random.Shared.Next(0, 3);
+                Console.WriteLine("Please enter ROCK, PAPER or SCISSORS:");
+                playerGuess = Console.ReadLine().ToUpper();
+                Console.WriteLine($"Your play: {playerGuess}");
+                Console.WriteLine($"Computer played: {optionsRPS[computerGuess]}");
+
+                switch (computerGuess)
                 {
-                    Console.WriteLine($"{guess} is too low");
+                    case 0: //ROCK
+                        if (playerGuess == "PAPER")
+                        {
+                            Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
+                        }
+                        else if (playerGuess == "SCISSORS")
+                        {
+                            Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
+                        }
+                        else if(playerGuess == "ROCK")
+                        {
+                            Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
+                        }
+                        else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
+                        break;
+                    case 1: //PAPER
+                        if (playerGuess == "PAPER")
+                        {
+                            Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
+                        }
+                        else if (playerGuess == "SCISSORS")
+                        {
+                            Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
+                        }
+                        else if (playerGuess == "ROCK")
+                        {
+                            Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
+                        }
+                        else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
+                        break;
+                    case 2: //Scissors
+                        if (playerGuess == "PAPER")
+                        {
+                            Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
+                        }
+                        else if (playerGuess == "SCISSORS")
+                        {
+                            Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
+                        }
+                        else if (playerGuess == "ROCK")
+                        {
+                            Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
+                        }
+                        else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
+                        break;
+
+
+
                 }
-                else
+                Console.WriteLine("Would you like to play again? (Y/N)");
+                //playAgainSTR = Console.ReadLine().ToUpper();
+                if (Console.ReadLine().ToUpper() == "Y")
                 {
-                    Console.WriteLine($"{guess} is too high");
+                    playAgain = true;
                 }
-                Console.WriteLine("Guess a new number between 1-100:");
-                guess = Convert.ToInt32(Console.ReadLine());
+                else { playAgain = false; }
             }
-            Console.WriteLine("Well done! You guessed the number.");
-
-
-            //Rock,Paper,Scissors
-
+            Console.WriteLine("Thanks for playing.");
         }
     }
 }
