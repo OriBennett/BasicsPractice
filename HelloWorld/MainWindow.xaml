@@ -12,5 +12,7 @@
         <TextBlock x:Name="helloTB"><Italic>Hello</Italic> <Bold>Noam</Bold><LineBreak/>
             Go to: <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com">google.com</Hyperlink>
         </TextBlock>
+        <TextBlock TextWrapping="WrapWithOverflow">Lorem ipsum dolor sit amet, <Span Foreground="Green">consectetur</Span> adipiscing elit. Fusce luctus iaculis tristique. Aliquam venenatis dignissim felis, vitae efficitur sapien placerat sit amet. Nam gravida neque ac purus dictum, et dapibus nulla convallis. Vivamus a tempus diam. Aliquam convallis neque vel mi molestie, eget lacinia nisl convallis. Nam egestas sodales bibendum. Maecenas sit amet pharetra libero. Curabitur sit amet massa erat.
+        </TextBlock>
     </StackPanel>
 </Window>
