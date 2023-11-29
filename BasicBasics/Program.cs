@@ -319,84 +319,107 @@ namespace BasicBasics
             //Console.WriteLine("Well done! You guessed the number.");
 
 
-            //Rock,Paper,Scissors 
+            ////Rock,Paper,Scissors 
 
-            Console.WriteLine("Rock, Paper, Scissors:");
+            //Console.WriteLine("Rock, Paper, Scissors:");
 
-            string playerGuess;
-            string[] optionsRPS = { "ROCK", "PAPER", "SCISSORS" };
-            int computerGuess;
-            bool playAgain = true;
-            //string playAgainSTR;
-            while (playAgain)
-            {
-                computerGuess = Random.Shared.Next(0, 3);
-                Console.WriteLine("Please enter ROCK, PAPER or SCISSORS:");
-                playerGuess = Console.ReadLine().ToUpper();
-                Console.WriteLine($"Your play: {playerGuess}");
-                Console.WriteLine($"Computer played: {optionsRPS[computerGuess]}");
+            //string playerGuess;
+            //string[] optionsRPS = { "ROCK", "PAPER", "SCISSORS" };
+            //int computerGuess;
+            //bool playAgain = true;
+            ////string playAgainSTR;
+            //while (playAgain)
+            //{
+            //    computerGuess = Random.Shared.Next(0, 3);
+            //    Console.WriteLine("Please enter ROCK, PAPER or SCISSORS:");
+            //    playerGuess = Console.ReadLine().ToUpper();
+            //    Console.WriteLine($"Your play: {playerGuess}");
+            //    Console.WriteLine($"Computer played: {optionsRPS[computerGuess]}");
 
-                switch (computerGuess)
-                {
-                    case 0: //ROCK
-                        if (playerGuess == "PAPER")
-                        {
-                            Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
-                        }
-                        else if (playerGuess == "SCISSORS")
-                        {
-                            Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
-                        }
-                        else if(playerGuess == "ROCK")
-                        {
-                            Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
-                        }
-                        else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
-                        break;
-                    case 1: //PAPER
-                        if (playerGuess == "PAPER")
-                        {
-                            Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
-                        }
-                        else if (playerGuess == "SCISSORS")
-                        {
-                            Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
-                        }
-                        else if (playerGuess == "ROCK")
-                        {
-                            Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
-                        }
-                        else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
-                        break;
-                    case 2: //Scissors
-                        if (playerGuess == "PAPER")
-                        {
-                            Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
-                        }
-                        else if (playerGuess == "SCISSORS")
-                        {
-                            Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
-                        }
-                        else if (playerGuess == "ROCK")
-                        {
-                            Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
-                        }
-                        else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
-                        break;
+            //    switch (computerGuess)
+            //    {
+            //        case 0: //ROCK
+            //            if (playerGuess == "PAPER")
+            //            {
+            //                Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
+            //            }
+            //            else if (playerGuess == "SCISSORS")
+            //            {
+            //                Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
+            //            }
+            //            else if(playerGuess == "ROCK")
+            //            {
+            //                Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
+            //            }
+            //            else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
+            //            break;
+            //        case 1: //PAPER
+            //            if (playerGuess == "PAPER")
+            //            {
+            //                Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
+            //            }
+            //            else if (playerGuess == "SCISSORS")
+            //            {
+            //                Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
+            //            }
+            //            else if (playerGuess == "ROCK")
+            //            {
+            //                Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
+            //            }
+            //            else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
+            //            break;
+            //        case 2: //Scissors
+            //            if (playerGuess == "PAPER")
+            //            {
+            //                Console.WriteLine($"{playerGuess} beats {optionsRPS[computerGuess]}, You win!");
+            //            }
+            //            else if (playerGuess == "SCISSORS")
+            //            {
+            //                Console.WriteLine($"{optionsRPS[computerGuess]} ties with {playerGuess}");
+            //            }
+            //            else if (playerGuess == "ROCK")
+            //            {
+            //                Console.WriteLine($"{optionsRPS[computerGuess]} beats {playerGuess}, You Lose.");
+            //            }
+            //            else { Console.WriteLine("You lose by default, next time, please choose ROCK, PAPER or SCISSORS."); }
+            //            break;
 
 
 
-                }
-                Console.WriteLine("Would you like to play again? (Y/N)");
-                //playAgainSTR = Console.ReadLine().ToUpper();
-                //if (Console.ReadLine().ToUpper() == "Y")
-                //{
-                //    playAgain = true;
-                //}
-                //else { playAgain = false; }
-                playAgain = (Console.ReadLine().ToUpper() == "Y") ? true : false; //same as the if above, cool
-            }
-            Console.WriteLine("Thanks for playing.");
+            //    }
+            //    Console.WriteLine("Would you like to play again? (Y/N)");
+            //    //playAgainSTR = Console.ReadLine().ToUpper();
+            //    //if (Console.ReadLine().ToUpper() == "Y")
+            //    //{
+            //    //    playAgain = true;
+            //    //}
+            //    //else { playAgain = false; }
+            //    playAgain = (Console.ReadLine().ToUpper() == "Y") ? true : false; //same as the if above, cool
+            //}
+            //Console.WriteLine("Thanks for playing.");
+
+
+            //Lists
+
+            List<string> food = new List<string>();
+
+            food.Add("pizza");
+            food.Add("hamburger");
+            food.Add("sushi");
+            food.Add("fries");
+            food.Add("steak");
+
+            food.ForEach(x => Console.WriteLine(x));
+            Console.WriteLine(food.BinarySearch("steak"));//doesn't work because not sorted (gives the location of it if it were sorted?)
+            food.Sort();
+            Console.WriteLine(food.BinarySearch("steak"));//works because sorted
+            Console.WriteLine(food.Count());
+            Console.WriteLine(food.Capacity);
+            Console.WriteLine(food.IndexOf("sushi"));
+            Console.WriteLine(food);
+
+
+
 
 
         }
