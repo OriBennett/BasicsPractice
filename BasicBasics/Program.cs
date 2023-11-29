@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 
 namespace BasicBasics
 {
@@ -419,9 +420,39 @@ namespace BasicBasics
             Console.WriteLine(food);
 
 
+            //threading
+            Thread mainThread = Thread.CurrentThread;
+            mainThread.Name = "Main";
+            Thread thread1 = new Thread(() => CountDown("Timer #1"));
+            Thread thread2 = new Thread(() => CountUp("Timer #2"));
+            thread1.Start();
+            thread2.Start();
 
+            //CountDown("Timer#1");
+            //CountUp("Timer #2");
 
+            Console.WriteLine(mainThread.Name + " is complete");
 
+        }
+
+        public static void CountUp(string name)
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine($"{name}: {i}");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine($"{name} is complete");
+
+        }
+        public static void CountDown(string name)
+        {
+            for (int i = 5; i > 0; i--)
+            {
+                Console.WriteLine($"{name}: {i}");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine($"{name} is complete");
         }
     }
 }
