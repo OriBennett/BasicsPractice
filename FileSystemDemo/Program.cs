@@ -41,11 +41,23 @@
             Console.WriteLine();
             Console.WriteLine();
             files = Directory.GetFiles(rootPath);
-            string destinationFolder
+            string destinationFolder;
             foreach (var file in files)
             {
                 Console.WriteLine(file);
             }
+
+            //decimal myDecimal = 1.0m; checking some accuracy stuff
+            //double myDouble = 1.0d;
+
+            //Console.WriteLine($"Decimal: {myDecimal}"); // Output: Decimal: 1.0
+            //Console.WriteLine($"Double: {myDouble}");   // Output: Double: 1
+            //Console.WriteLine($"Decimal: {myDecimal+myDecimal}"); // Output: Decimal: 2.0
+            //Console.WriteLine($"Double: {myDouble+myDouble}");   // Output: Double: 2
+            //Console.WriteLine($"Decimal: {myDecimal / myDecimal}"); // Output: Decimal: 1
+            //Console.WriteLine($"Double: {myDouble / myDouble}");   // Output: Double: 1
+
+
         }
     }
 }
