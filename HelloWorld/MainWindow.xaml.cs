@@ -21,6 +21,8 @@ namespace HelloWorld
             InitializeComponent();
             myButton.FontSize = 48;
             myButton.Content = "Welcome to the program. Click me!";
+            helloTB.Foreground = Brushes.BlueViolet;
+            helloTB.FontWeight = FontWeights.Bold;
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
