@@ -68,5 +68,11 @@
         <CheckBox Margin="15,5" x:Name="Jalapeno" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Jalapeno</CheckBox>
         <CheckBox Margin="15,5" x:Name="Mushrooms" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Mushrooms</CheckBox>
 
+        <Label>Name:</Label>
+        <TextBox></TextBox>
+        <Label>Password</Label>
+        <PasswordBox ></PasswordBox>
+        <Label>Confirm Password</Label>
+        <PasswordBox PasswordChar="*" FontSize="25" MaxLength="8"></PasswordBox>
     </StackPanel>
 </Window>
