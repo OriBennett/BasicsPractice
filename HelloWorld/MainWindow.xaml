@@ -16,10 +16,22 @@
         </TextBlock>
         <Label><!--Can only put one Child in here as far as I can tell(tThat child can have it's own children-->
             <StackPanel>
-
                 <AccessText Text="Messege"></AccessText>
             </StackPanel>
         </Label>
-        <TextBox></TextBox>
+        <TextBox
+            FontSize="30"
+            Margin="15"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            SpellCheck.IsEnabled="True"
+            Language="en-US"
+            Background="Aqua"
+            Foreground="Black"
+            Text="Hi"
+            IsReadOnly="False"
+            
+            
+            ></TextBox>
     </StackPanel>
 </Window>
