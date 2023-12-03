@@ -20,6 +20,7 @@
             </StackPanel>
         </Label>
         <TextBox
+            x:Name="myTextBox"
             FontSize="30"
             Margin="15"
             AcceptsReturn="True"
@@ -29,9 +30,8 @@
             Background="Aqua"
             Foreground="Black"
             Text="Hi"
-            IsReadOnly="False"
-            
-            
+            IsReadOnly="False"            
             ></TextBox>
+        <Button x:Name="mySecondButton" Click="mySecondButton_Click">Click Me!</Button>
     </StackPanel>
 </Window>

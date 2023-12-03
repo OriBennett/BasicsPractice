@@ -40,5 +40,14 @@ namespace HelloWorld
         {
            //System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);  Doesn't work like in the tutorial and I'm not sure why probably because I don't have a default browser. Also might be that I'm not in framework.
         }
+
+        private void mySecondButton_Click(object sender, RoutedEventArgs e)
+        {
+            double myFontSize = myTextBox.FontSize;
+            myTextBox.FontSize += 5;
+            myTextBox.Text = "Hello";
+            myTextBox.Foreground = Brushes.BlueViolet;
+            myTextBox.Background = Brushes.Green;
+        }
     }
 }
