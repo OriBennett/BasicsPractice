@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="Hello World Window" Height="600" Width="800">
+        Title="Hello World Window" Height="800" Width="800">
     <StackPanel>
         <Label>Hello World!</Label>
         <Button x:Name="myButton">Click Me</Button>
@@ -43,5 +43,30 @@
         <RadioButton GroupName="Feeling">Good</RadioButton>
         <RadioButton GroupName="Feeling">Ok</RadioButton>
         <RadioButton GroupName="Feeling">Not Happy</RadioButton>
+
+        
+        <!--<Label FontWeight="Bold">Toppings:</Label>
+        <CheckBox x:Name="cbParent" IsThreeState="True" Checked="cbParent_CheckedChanged" Unchecked="cbParent_CheckedChanged">Select All</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Cheese" VerticalContentAlignment="Center" Checked="Cheese_Checked" Unchecked="Cheese_Unchecked">Extra Cheese</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Olives" Checked="Olives_Checked" Unchecked="Olives_Unchecked">Olives</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Pineapple" Checked="Pineapple_Checked" Unchecked="Pineapple_Unchecked">Pineapple</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Tuna" Checked="Tuna_Checked" Unchecked="Tuna_Unchecked">Tuna</CheckBox>
+        <CheckBox Margin="15,5" x:Name="GreenPepper" Checked="GreenPepper_Checked" Unchecked="GreenPepper_Unchecked">Green Pepper</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Jalapeno" Checked="Jalapeno_Checked" Unchecked="Jalapeno_Unchecked">Jalapeno</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Mushrooms" Checked="Mushrooms_Checked" Unchecked="Mushrooms_Unchecked">Mushrooms</CheckBox>
+        --><!--This feels like it's redundent code and that I should be able to do this all in one place. Maybe I'll find how to do that in a bit.-->
+        <!--was the next thing in the tutorial-->
+        
+        
+        <Label FontWeight="Bold">Toppings:</Label>
+        <CheckBox x:Name="cbParent" IsThreeState="True" Checked="cbParent_CheckedChanged" Unchecked="cbParent_CheckedChanged">Select All</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Cheese" VerticalContentAlignment="Center" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Extra Cheese</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Olives" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Olives</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Pineapple" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Pineapple</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Tuna" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Tuna</CheckBox>
+        <CheckBox Margin="15,5" x:Name="GreenPepper" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Green Pepper</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Jalapeno" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Jalapeno</CheckBox>
+        <CheckBox Margin="15,5" x:Name="Mushrooms" Checked="cbToppingsChanged" Unchecked="cbToppingsChanged">Mushrooms</CheckBox>
+
     </StackPanel>
 </Window>

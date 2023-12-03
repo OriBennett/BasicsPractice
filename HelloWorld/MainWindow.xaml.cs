@@ -93,5 +93,34 @@ namespace HelloWorld
         {
             rbGantz.Background = Brushes.White;
         }
+
+        private void cbToppingsChanged(object sender, RoutedEventArgs e)
+        {
+            bool newVal = (cbParent.IsChecked == true);
+            Cheese.IsChecked = newVal;
+            Olives.IsChecked = newVal;
+            Pineapple.IsChecked = newVal;
+            Tuna.IsChecked = newVal;
+            GreenPepper.IsChecked = newVal;
+            Jalapeno.IsChecked = newVal;
+            Mushrooms.IsChecked = newVal;
+        }
+
+       
+        private void cbParent_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            cbParent.IsChecked = null;
+            if ((Cheese.IsChecked == true) && (Olives.IsChecked == true) && (Pineapple.IsChecked == true) && (Tuna.IsChecked == true) && (GreenPepper.IsChecked == true) && (Jalapeno.IsChecked==true) && (Mushrooms.IsChecked == true))
+            {
+                cbParent.IsChecked = true;
+            }
+            else if ((Cheese.IsChecked == false) && (Olives.IsChecked == false) && (Pineapple.IsChecked == false) && (Tuna.IsChecked == false) && (GreenPepper.IsChecked == false) && (Jalapeno.IsChecked == false) && (Mushrooms.IsChecked == false))
+            {
+                cbParent.IsChecked = false;
+            }
+            //still think that there is a better way to do this. should come back and refactor later.
+        }
+
+       
     }
 }
