@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="Hello World Window" Height="800" Width="800">
+        Title="Hello World Window" Height="1400" Width="800">
     <StackPanel>
-        <Label>Hello World!</Label>
+        <!--<Label>Hello World!</Label>
         <Button x:Name="myButton">Click Me</Button>
         <TextBlock x:Name="helloTB"><Italic>Hello</Italic> <Bold>Noam</Bold><LineBreak/>
             Go to: <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com">google.com</Hyperlink>
         </TextBlock>
         <TextBlock TextWrapping="WrapWithOverflow">Lorem ipsum dolor sit amet, <Span Foreground="Green">consectetur</Span> adipiscing elit. Fusce luctus iaculis tristique. Aliquam venenatis dignissim felis, vitae efficitur sapien placerat sit amet. Nam gravida neque ac purus dictum, et dapibus nulla convallis. Vivamus a tempus diam. Aliquam convallis neque vel mi molestie, eget lacinia nisl convallis. Nam egestas sodales bibendum. Maecenas sit amet pharetra libero. Curabitur sit amet massa erat.
         </TextBlock>
-        <Label><!--Can only put one Child in here as far as I can tell(tThat child can have it's own children-->
+        <Label>--><!--Can only put one Child in here as far as I can tell(tThat child can have it's own children--><!--
             <StackPanel>
                 <AccessText Text="Messege"></AccessText>
             </StackPanel>
@@ -42,7 +42,7 @@
         <Label>How do you feel about it?</Label>
         <RadioButton GroupName="Feeling">Good</RadioButton>
         <RadioButton GroupName="Feeling">Ok</RadioButton>
-        <RadioButton GroupName="Feeling">Not Happy</RadioButton>
+        <RadioButton GroupName="Feeling">Not Happy</RadioButton>-->
 
         
         <!--<Label FontWeight="Bold">Toppings:</Label>
@@ -74,5 +74,6 @@
         <PasswordBox ></PasswordBox>
         <Label>Confirm Password</Label>
         <PasswordBox PasswordChar="*" FontSize="25" MaxLength="8"></PasswordBox>
+        <Image x:Name="BBQPic" Width="400" MouseUp="BBQPic_MouseUp" Source="pack://application:,,,/Images/BBQ_pic.bmp"></Image>
     </StackPanel>
 </Window>
