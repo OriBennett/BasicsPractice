@@ -49,5 +49,49 @@ namespace HelloWorld
             myTextBox.Foreground = Brushes.BlueViolet;
             myTextBox.Background = Brushes.Green;
         }
+
+        private void rbBibi_Checked(object sender, RoutedEventArgs e)
+        {
+            rbBibi.Background= Brushes.Red;
+        }
+
+        private void rbBibi_Unchecked(object sender, RoutedEventArgs e)
+        {
+            rbBibi.Background = Brushes.White;
+
+        }
+
+        private void rbLapid_Checked(object sender, RoutedEventArgs e)
+        {
+            rbLapid.Background = Brushes.Red;
+
+        }
+
+        private void rbLapid_Unchecked(object sender, RoutedEventArgs e)
+        {
+            rbLapid.Background = Brushes.White;
+        }
+
+        private void rbBennett_Checked(object sender, RoutedEventArgs e)
+        {
+            rbBennett.Background = Brushes.Red;
+
+        }
+
+        private void rbBennett_Unchecked(object sender, RoutedEventArgs e)
+        {
+            rbBennett.Background = Brushes.White;
+        }
+
+        private void rbGantz_Checked(object sender, RoutedEventArgs e)
+        {
+            rbGantz.Background = Brushes.Red;
+
+        }
+
+        private void rbGantz_Unchecked(object sender, RoutedEventArgs e)
+        {
+            rbGantz.Background = Brushes.White;
+        }
     }
 }

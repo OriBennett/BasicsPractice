@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="Hello World Window" Height="400" Width="800">
+        Title="Hello World Window" Height="600" Width="800">
     <StackPanel>
         <Label>Hello World!</Label>
         <Button x:Name="myButton">Click Me</Button>
@@ -33,5 +33,15 @@
             IsReadOnly="False"            
             ></TextBox>
         <Button x:Name="mySecondButton" Click="mySecondButton_Click">Click Me!</Button>
+        <Label>Who will you vote for?</Label>
+        <RadioButton x:Name="rbBibi" Checked="rbBibi_Checked" Unchecked="rbBibi_Unchecked" GroupName="Prime">Bibi</RadioButton>
+        <RadioButton x:Name="rbLapid" Checked="rbLapid_Checked" Unchecked="rbLapid_Unchecked" GroupName="Prime">Lapid</RadioButton>
+        <RadioButton x:Name="rbBennett" Checked="rbBennett_Checked" Unchecked="rbBennett_Unchecked" GroupName="Prime">Bennett</RadioButton>
+        <RadioButton x:Name="rbGantz" Checked="rbGantz_Checked" Unchecked="rbGantz_Unchecked" GroupName="Prime">Gantz</RadioButton>
+
+        <Label>How do you feel about it?</Label>
+        <RadioButton GroupName="Feeling">Good</RadioButton>
+        <RadioButton GroupName="Feeling">Ok</RadioButton>
+        <RadioButton GroupName="Feeling">Not Happy</RadioButton>
     </StackPanel>
 </Window>
