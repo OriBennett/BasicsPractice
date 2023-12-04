@@ -125,5 +125,14 @@ namespace HelloWorld
         {
             BBQPic.Source = new BitmapImage(new Uri(@"/HelloWorld;component/Images/Shipud.bmp", UriKind.Relative));
         }
+
+        private void mySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if(sliderTB != null)
+            {
+                sliderTB.Text = "Slider value is: " + mySlider.Value.ToString();
+                sliderTB.FontSize = mySlider.Value;
+            }
+        }
     }
 }

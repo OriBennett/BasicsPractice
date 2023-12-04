@@ -75,5 +75,9 @@
         <Label>Confirm Password</Label>
         <PasswordBox PasswordChar="*" FontSize="25" MaxLength="8"></PasswordBox>
         <Image x:Name="BBQPic" Width="400" MouseUp="BBQPic_MouseUp" Source="pack://application:,,,/Images/BBQ_pic.bmp"></Image>
+        <Slider x:Name="mySlider" Value="50" ValueChanged="mySlider_ValueChanged" Margin="20" Maximum="100" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" Minimum="1"></Slider>
+        <TextBlock HorizontalAlignment="Center" x:Name="sliderTB"></TextBlock>
+        <Slider x:Name="mySlider2" Value="50" Margin="20" Maximum="100" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" Minimum="1"></Slider>
+        <TextBlock HorizontalAlignment="Center" x:Name="sliderTB2" Text="{Binding ElementName=mySlider2, Path=Value, StringFormat=The sliders value is {0}}" FontSize="{Binding ElementName=mySlider2, Path=Value, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
     </StackPanel>
 </Window>
