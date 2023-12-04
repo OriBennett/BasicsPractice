@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="Hello World Window" Height="1400" Width="800">
+        Title="Hello World Window" Height="600" Width="800">
+    <ScrollViewer>
     <StackPanel>
         <!--<Label>Hello World!</Label>
         <Button x:Name="myButton">Click Me</Button>
@@ -79,5 +80,14 @@
         <TextBlock HorizontalAlignment="Center" x:Name="sliderTB"></TextBlock>
         <Slider x:Name="mySlider2" Value="50" Margin="20" Maximum="100" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" Minimum="1"></Slider>
         <TextBlock HorizontalAlignment="Center" x:Name="sliderTB2" Text="{Binding ElementName=mySlider2, Path=Value, StringFormat=The sliders value is {0}}" FontSize="{Binding ElementName=mySlider2, Path=Value, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-    </StackPanel>
+
+        <Canvas>
+                <Button Canvas.Right="5">click me</Button>
+                <Button Canvas.Left="5">click me too</Button>
+                <Rectangle Fill="Aqua" Height="100" Width="100" Canvas.Bottom="0"></Rectangle>
+            
+        </Canvas>
+        </StackPanel>
+    
+    </ScrollViewer>
 </Window>
