@@ -22,6 +22,7 @@ namespace CatYearsCodeBehind
         public MainWindow()
         {
             InitializeComponent();
+            myMainWindow.Height = 550;
             Image backgroundImage = new Image() { Source = new BitmapImage(new Uri("/Images/TimeCat.bmp", UriKind.Relative)) };
             TextBlock PromptText = new TextBlock() { Text = "What is your cats age? (years)" };
             CatAgeTB = new TextBlock {Text = "Your cat age is" };
