@@ -42,6 +42,5 @@
             </ToolBar>
         </ToolBarTray>
         <TextBox x:Name="myTextBox"></TextBox>
-
     </DockPanel>
 </Window>
