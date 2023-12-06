@@ -44,8 +44,7 @@
         <TextBox x:Name="myTextBox">
             <TextBox.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header ="Bold" x:Name="miBold" Click="boldButton_Click" IsCheckable="True"></MenuItem>
-                    <!--This Doesn't work perfectly. If you click the bold it doesnt get checked-->
+                    <MenuItem Header ="Bold" x:Name="miBold" Click="boldButton_Click" IsCheckable="True"></MenuItem>                    
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
