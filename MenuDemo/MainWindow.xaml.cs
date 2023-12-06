@@ -33,12 +33,14 @@ namespace MenuDemo
                 boldButton.FontWeight = FontWeights.Bold;
                 myTextBox.FontWeight = FontWeights.Bold;
                 miBold.FontWeight = FontWeights.Bold;
+                miBold.IsChecked = true;
             }
             else
             {
                 myTextBox.FontWeight = FontWeights.Normal;
                 boldButton.FontWeight = FontWeights.Normal;
                 miBold.FontWeight = FontWeights.Normal;
+                miBold.IsChecked = false;
             }
         }
 
@@ -47,7 +49,7 @@ namespace MenuDemo
             if (sizeCB.SelectedItem as ComboBoxItem != null)
             {
                 int newSize;
-                ComboBoxItem selectedItem = sizeCB.SelectedItem as ComboBoxItem; 
+                ComboBoxItem selectedItem = sizeCB.SelectedItem as ComboBoxItem; //Isn't null, I just checked
                 string sizeText = (string)selectedItem.Content; //why does this only work with casting and not with a to string?
                 if (int.TryParse(sizeText, out newSize))
                 {
