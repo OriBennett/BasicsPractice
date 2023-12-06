@@ -32,11 +32,13 @@ namespace MenuDemo
             {
                 boldButton.FontWeight = FontWeights.Bold;
                 myTextBox.FontWeight = FontWeights.Bold;
+                miBold.FontWeight = FontWeights.Bold;
             }
             else
             {
                 myTextBox.FontWeight = FontWeights.Normal;
                 boldButton.FontWeight = FontWeights.Normal;
+                miBold.FontWeight = FontWeights.Normal;
             }
         }
 

@@ -29,7 +29,7 @@
         </Menu>
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button x:Name="deleteButton" Width="100" Click="deleteButton_Click">Delete</Button>
+                <Button x:Name="deleteButton" Width="100" Click="deleteButton_Click" ToolTip="Delete text">Delete</Button>
                 <Separator/>
                 <Button x:Name="boldButton" Width="100" Click="boldButton_Click">Bold</Button>
                 <Separator/>
@@ -41,6 +41,13 @@
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="myTextBox"></TextBox>
+        <TextBox x:Name="myTextBox">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header ="Bold" x:Name="miBold" Click="boldButton_Click" IsCheckable="True"></MenuItem>
+                    <!--This Doesn't work perfectly. If you click the bold it doesnt get checked-->
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
     </DockPanel>
 </Window>
