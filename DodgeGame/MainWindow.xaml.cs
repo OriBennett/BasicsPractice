@@ -29,11 +29,10 @@ namespace DodgeGame
         }
         private void menuLoad_Click(object sender, RoutedEventArgs e)
         {
-            ////Will load saved game if possible and if not, ask to start a new game
-            //gameFrame.Content = new Game(/*with stuff in here so it loads or maybe some other way to load*/);
-            ////Maybe create the game, then add stuff then change content
-            private Game _game = new Game("Saved Game");
-            //Game.ChangeText = "Saved Game";
+            //Will load saved game if possible and if not, ask to start a new game
+            gameFrame.Content = new Game("Saved Game");
+            //Maybe create the game, then add stuff then change content
+
 
         }
         private void menuSave_Click(object sender, RoutedEventArgs e)
