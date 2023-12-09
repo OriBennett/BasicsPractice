@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MenuDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
+    <DockPanel LastChildFill="False">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New">
@@ -48,5 +48,18 @@
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
+        <Button x:Name="ProgressButton1" Content="Progress by 1" DockPanel.Dock="Top" Click="ProgressButton1_Click"></Button>
+        <Button x:Name="ProgressButton5" Content="Progress by 5" DockPanel.Dock="Top" Click="ProgressButton5_Click"></Button>
+        <Button x:Name="ProgressButton20" Content="Progress by 20" DockPanel.Dock="Top" Click="ProgressButton20_Click"></Button>
+        <Button x:Name="ProgressButtonReset" Content="Reset Progress" DockPanel.Dock="Top" Click="ProgressButtonReset_Click"></Button>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem x:Name="StatusText">
+                loading...
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <ProgressBar x:Name="myProgressBar" Height="15" Width="120" Value="10"></ProgressBar>
+            </StatusBarItem>
+        </StatusBar>
     </DockPanel>
 </Window>

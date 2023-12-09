@@ -58,5 +58,37 @@ namespace MenuDemo
                 }
             }
         }
+
+        private void ProgressButton1_Click(object sender, RoutedEventArgs e)
+        {
+            myProgressBar.Value += 1;
+            CheckDone();
+        }
+
+        private void ProgressButton5_Click(object sender, RoutedEventArgs e)
+        {
+            myProgressBar.Value += 5;
+            CheckDone();
+        }
+
+        private void ProgressButton20_Click(object sender, RoutedEventArgs e)
+        {
+            myProgressBar.Value += 20;
+            CheckDone();
+        }
+
+        private void ProgressButtonReset_Click(object sender, RoutedEventArgs e)
+        {
+            myProgressBar.Value = 0;
+            StatusText.Content = "Loading...";
+        }
+
+        private void CheckDone()
+        {
+            if (myProgressBar.Value == 100)
+            {
+                StatusText.Content = "Done!";
+            }
+        }
     }
 }
