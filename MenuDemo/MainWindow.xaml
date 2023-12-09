@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MenuDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel LastChildFill="False">
+    <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New">
@@ -61,5 +61,10 @@
                 <ProgressBar x:Name="myProgressBar" Height="15" Width="120" Value="10"></ProgressBar>
             </StatusBarItem>
         </StatusBar>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button x:Name="btnToPage1" Content="To Page 1" Click="btnToPage1_Click"></Button>
+            <Button x:Name="btnToPage2" Content="To Page 2" Click="btnToPage2_Click"></Button>
+        </StackPanel>
+        <Frame x:Name="Viewer"></Frame>
     </DockPanel>
 </Window>

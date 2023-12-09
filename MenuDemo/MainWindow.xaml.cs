@@ -90,5 +90,15 @@ namespace MenuDemo
                 StatusText.Content = "Done!";
             }
         }
+
+        private void btnToPage1_Click(object sender, RoutedEventArgs e)
+        {
+            Viewer.Content = new Page1();
+        }
+
+        private void btnToPage2_Click(object sender, RoutedEventArgs e)
+        {
+            Viewer.Content = new Page2();
+        }
     }
 }
