@@ -67,4 +67,5 @@
         </StackPanel>
         <Frame x:Name="Viewer"></Frame>
     </DockPanel>
+    <!-- Done for now -->
 </Window>
