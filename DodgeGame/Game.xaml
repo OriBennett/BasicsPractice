@@ -9,6 +9,8 @@
       Title="Game">
 
     <Canvas>
+        
+
         <TextBlock x:Name="gameText" Text="Game, Fun!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
     </Canvas>
 </Page>

@@ -24,6 +24,7 @@ namespace DodgeGame
         public Game()
         {
             InitializeComponent();
+            InitializeBoard();
         }
         public Game(string text)
         {
@@ -38,9 +39,15 @@ namespace DodgeGame
 
         public void InitializeBoard()
         {
-            Image goodie = new Image(/*goodieImagae*/) {/*Random location in Canvas*/ };
+            Image goodie = new Image();
             Image[] baddies = new Image[10];
+            goodie.Source = new BitmapImage(new Uri("/Images/beer-7370681_640.png",UriKind.Relative));
+            goodie.Width = 50;
+            goodie.BeginInit();
+            TextBlock textBlock = new TextBlock {Text = "TestingText", FontSize = 54 };
             this.AddVisualChild(goodie);
+            this.AddVisualChild(textBlock);
+            //ChangeText("Changed"); Testing to see if the code reached here
 
             for (int i = 0; i < baddies.Length; i++)
             {
