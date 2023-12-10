@@ -44,18 +44,21 @@ namespace DodgeGame
             //BBQPic.Source = new BitmapImage(new Uri(@"/HelloWorld;component/Images/Shipud.bmp", UriKind.Relative)); template for bitmaps
             goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_640.bmp",UriKind.Relative));
             goodie.Width = 50;
-            goodie.BeginInit();
+            gameCanvas.Children.Add(goodie);
             TextBlock textBlock = new TextBlock {Text = "TestingText", FontSize = 54 };
-            this.AddVisualChild(goodie);
-            this.AddVisualChild(textBlock);
             ChangeText("is"+(string)this.LogicalChildren.Current);
             //ChangeText("Changed"); Testing to see if the code reached here
 
             for (int i = 0; i < baddies.Length; i++)
             {
-                baddies[i].Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_640.bmp", UriKind.Relative));
-                this.AddVisualChild(baddies[i]);
+                baddies[i] = new Image
+                {
+                    Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/sugar-skull-7441361_1280.bmp", UriKind.Relative))
+                };
+                baddies[i].Width = 50;
+                gameCanvas.Children.Add(baddies[i]);
             }
+            //gameCanvas.
         }
         //public void InitializeBoardFromSave(/*Some sort of data object with locations for goddie and baddies*/)
         //{
