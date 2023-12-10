@@ -58,7 +58,7 @@ namespace DodgeGame
                 baddies[i].Width = 50;
                 gameCanvas.Children.Add(baddies[i]);
             }
-            //gameCanvas.
+            
         }
         //public void InitializeBoardFromSave(/*Some sort of data object with locations for goddie and baddies*/)
         //{
