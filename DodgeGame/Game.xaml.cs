@@ -41,17 +41,19 @@ namespace DodgeGame
         {
             Image goodie = new Image();
             Image[] baddies = new Image[10];
-            goodie.Source = new BitmapImage(new Uri("/Images/beer-7370681_640.png",UriKind.Relative));
+            //BBQPic.Source = new BitmapImage(new Uri(@"/HelloWorld;component/Images/Shipud.bmp", UriKind.Relative)); template for bitmaps
+            goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_640.bmp",UriKind.Relative));
             goodie.Width = 50;
             goodie.BeginInit();
             TextBlock textBlock = new TextBlock {Text = "TestingText", FontSize = 54 };
             this.AddVisualChild(goodie);
             this.AddVisualChild(textBlock);
+            ChangeText("is"+(string)this.LogicalChildren.Current);
             //ChangeText("Changed"); Testing to see if the code reached here
 
             for (int i = 0; i < baddies.Length; i++)
             {
-                baddies[i] = new Image(/*BaddiesImage*/) {/*Random location in Canvas Not on Goodie*/ };
+                baddies[i].Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_640.bmp", UriKind.Relative));
                 this.AddVisualChild(baddies[i]);
             }
         }
