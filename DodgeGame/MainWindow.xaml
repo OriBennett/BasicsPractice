@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:DodgeGame"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="New Game" Click="menuNew_Click" x:Name="menuNewGame"/>
-            <MenuItem Header="Load Saved Game" Click="menuLoad_Click" x:Name="menuLoadGame"/>
-            <MenuItem Header="Save" x:Name="menuSave" Click="menuSave_Click"/>
+    <DockPanel Focusable="False">
+        <Menu DockPanel.Dock="Top" Focusable="False">
+            <MenuItem Header="New Game" Click="menuNew_Click" x:Name="menuNewGame" Focusable="False"/>
+            <MenuItem Header="Load Saved Game" Click="menuLoad_Click" x:Name="menuLoadGame" Focusable="False"/>
+            <MenuItem Header="Save" x:Name="menuSave" Click="menuSave_Click" Focusable="False"/>
         </Menu>
 
-        <Frame x:Name="gameFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Frame x:Name="gameFrame" NavigationUIVisibility="Hidden" Focusable="False"></Frame>
 
     </DockPanel>
 </Window>
