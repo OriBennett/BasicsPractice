@@ -35,7 +35,7 @@ namespace DodgeGame
 
         public void ChangeText(string text)
         {
-            gameText.Text = text;
+            //gameText.Text = text;
         }
 
         public void InitializeBoard()
@@ -82,41 +82,162 @@ namespace DodgeGame
             
         }
 
-        private void gameCanvas_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Left)
-            {
-                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1]) - 1); //This sort of works and only works every second keydown
-                ChangeText("Left");
-                gameCanvas.Focus();
-            }
-            else if (e.Key == Key.Right)
-            {
-                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1])+1); //This sort of works and only works every second keydown
-                ChangeText("Right");
-                gameCanvas.Focus();
-            }
-            else if (e.Key == Key.Up)
-            {
-                Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) - 1); //This loses focus
-                gameCanvas.Focus();
-            }
-            else if (e.Key == Key.Down)
-            {
-                Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) + 1); //This loses focus
-                gameCanvas.Focus();
-            }
-            else if (e.Key == Key.Space)
-            {
-                Canvas.SetTop(gameCanvas.Children[1], Random.Shared.Next(0, 374));
-                Canvas.SetLeft(gameCanvas.Children[1], Random.Shared.Next(0, 740)); //This works well
-            }
-            gameCanvas.Focus();
-        }
+        //private void gameCanvas_KeyDown(object sender, KeyEventArgs e) //Trying something new
+        //{
+        //    if (e.Key == Key.Left)
+        //    {
+        //        Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1]) - 1); //This sort of works and only works every second keydown
+        //        ChangeText("Left");
+        //        gameCanvas.Focus();
+        //    }
+        //    else if (e.Key == Key.Right)
+        //    {
+        //        Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1])+1); //This sort of works and only works every second keydown
+        //        ChangeText("Right");
+        //        gameCanvas.Focus();
+        //    }
+        //    else if (e.Key == Key.Up)
+        //    {
+        //        Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) - 1); //This loses focus
+        //        gameCanvas.Focus();
+        //    }
+        //    else if (e.Key == Key.Down)
+        //    {
+        //        Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) + 1); //This loses focus
+        //        gameCanvas.Focus();
+        //    }
+        //    else if (e.Key == Key.Space)
+        //    {
+        //        Canvas.SetTop(gameCanvas.Children[1], Random.Shared.Next(0, 374));
+        //        Canvas.SetLeft(gameCanvas.Children[1], Random.Shared.Next(0, 740)); //This works well
+        //    }
+        //    gameCanvas.Focus();
+        //}
 
         private void gameCanvas_Loaded(object sender, RoutedEventArgs e)
         {
             gameCanvas.Focus();
+        }
+        // Define flags for movement directions
+        private bool movingLeft, movingRight, movingUp, movingDown;
+
+        private void gameCanvas_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Set flags based on the pressed keys
+            if (e.Key == Key.Left)
+            {
+                movingLeft = true;
+            }
+            else if (e.Key == Key.Right)
+            {
+                movingRight = true;
+            }
+            else if (e.Key == Key.Up)
+            {
+                movingUp = true;
+            }
+            else if (e.Key == Key.Down)
+            {
+                movingDown = true;
+            }
+
+            // Handle diagonal movement
+            UpdatePosition();
+        }
+
+        private void gameCanvas_KeyUp(object sender, KeyEventArgs e)
+        {
+            // Clear flags when keys are released
+            if (e.Key == Key.Left)
+            {
+                movingLeft = false;
+            }
+            else if (e.Key == Key.Right)
+            {
+                movingRight = false;
+            }
+            else if (e.Key == Key.Up)
+            {
+                movingUp = false;
+            }
+            else if (e.Key == Key.Down)
+            {
+                movingDown = false;
+            }
+
+            // Handle diagonal movement
+            UpdatePosition();
+        }
+
+        private void UpdatePosition()
+        {
+            const double SPEED = 1.0; // Sets goodie speed here
+
+            // Update position based on flags
+            if (movingLeft && movingUp)
+            {
+                Canvas.SetLeft(gameCanvas.Children[0], Canvas.GetLeft(gameCanvas.Children[0]) - SPEED);
+                Canvas.SetTop(gameCanvas.Children[0], Canvas.GetTop(gameCanvas.Children[0]) - SPEED);
+            }
+            else if (movingLeft && movingDown)
+            {
+                Canvas.SetLeft(gameCanvas.Children[0], Canvas.GetLeft(gameCanvas.Children[0]) - SPEED);
+                Canvas.SetTop(gameCanvas.Children[0], Canvas.GetTop(gameCanvas.Children[0]) + SPEED);
+            }
+            else if (movingRight && movingUp)
+            {
+                Canvas.SetLeft(gameCanvas.Children[0], Canvas.GetLeft(gameCanvas.Children[0]) + SPEED);
+                Canvas.SetTop(gameCanvas.Children[0], Canvas.GetTop(gameCanvas.Children[0]) - SPEED);
+            }
+            else if (movingRight && movingDown)
+            {
+                Canvas.SetLeft(gameCanvas.Children[0], Canvas.GetLeft(gameCanvas.Children[0]) + SPEED);
+                Canvas.SetTop(gameCanvas.Children[0], Canvas.GetTop(gameCanvas.Children[0]) + SPEED);
+            }
+            // Handle single direction movement if needed
+            else if (movingLeft)
+            {
+                Canvas.SetLeft(gameCanvas.Children[0], Canvas.GetLeft(gameCanvas.Children[0]) - SPEED);
+            }
+            else if (movingRight)
+            {
+                Canvas.SetLeft(gameCanvas.Children[0], Canvas.GetLeft(gameCanvas.Children[0]) + SPEED);
+            }
+            else if (movingUp)
+            {
+                Canvas.SetTop(gameCanvas.Children[0], Canvas.GetTop(gameCanvas.Children[0]) - SPEED);
+            }
+            else if (movingDown)
+            {
+                Canvas.SetTop(gameCanvas.Children[0], Canvas.GetTop(gameCanvas.Children[0]) + SPEED);
+            }
+
+            EnemiesMove();
+        }
+        public void EnemiesMove()
+        {
+            const double SPEED = 1.0; // Sets Baddies speed here
+
+            for (int i=1; i<=10; i++)
+            {
+                if (Canvas.GetTop(gameCanvas.Children[i]) < Canvas.GetTop(gameCanvas.Children[0]))
+                {
+                    Canvas.SetTop(gameCanvas.Children[i], Canvas.GetTop(gameCanvas.Children[i]) + SPEED);
+                }
+                else
+                {
+                    Canvas.SetTop(gameCanvas.Children[i], Canvas.GetTop(gameCanvas.Children[i]) - SPEED);
+                }
+
+                if (Canvas.GetLeft(gameCanvas.Children[i]) < Canvas.GetLeft(gameCanvas.Children[0]))
+                {
+                    Canvas.SetLeft(gameCanvas.Children[i], Canvas.GetLeft(gameCanvas.Children[i]) + SPEED);
+                }
+                else
+                {
+                    Canvas.SetLeft(gameCanvas.Children[i], Canvas.GetLeft(gameCanvas.Children[i]) - SPEED);
+                }            
+            }
         }
     }
 }

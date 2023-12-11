@@ -7,9 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Game"
-      Focusable="False">
+      Focusable="False"
+      KeyUp="gameCanvas_KeyUp">
 
     <Canvas x:Name="gameCanvas" KeyDown="gameCanvas_KeyDown" Focusable="True" Loaded="gameCanvas_Loaded">
-        <TextBlock x:Name="gameText" Text="Game, Fun!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
+
     </Canvas>
 </Page>
