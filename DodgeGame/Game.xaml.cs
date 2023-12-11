@@ -42,13 +42,16 @@ namespace DodgeGame
             Image goodie = new Image();
             Image[] baddies = new Image[10];
             //BBQPic.Source = new BitmapImage(new Uri(@"/HelloWorld;component/Images/Shipud.bmp", UriKind.Relative)); template for bitmaps
-            goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_640.bmp",UriKind.Relative));
+            goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_1280.bmp",UriKind.Relative));
             goodie.Width = 50;
+            
             gameCanvas.Children.Add(goodie);
-            TextBlock textBlock = new TextBlock {Text = "TestingText", FontSize = 54 };
-            ChangeText("is"+(string)this.LogicalChildren.Current);
-            //ChangeText("Changed"); Testing to see if the code reached here
 
+            //goodie.Parent.SetValue("Top",Random.Shared.Next(0,740)); This didn't work
+            //goodie.Parent.SetValue("Left",Random.Shared.Next(0,374));
+
+            Canvas.SetTop(goodie, Random.Shared.Next(0, 374));
+            Canvas.SetLeft(goodie, Random.Shared.Next(0, 740));            
             for (int i = 0; i < baddies.Length; i++)
             {
                 baddies[i] = new Image
@@ -57,8 +60,9 @@ namespace DodgeGame
                 };
                 baddies[i].Width = 50;
                 gameCanvas.Children.Add(baddies[i]);
-            }
-            
+                Canvas.SetTop(baddies[i], Random.Shared.Next(0, 374));
+                Canvas.SetLeft(baddies[i], Random.Shared.Next(0, 740));
+            }            
         }
         //public void InitializeBoardFromSave(/*Some sort of data object with locations for goddie and baddies*/)
         //{

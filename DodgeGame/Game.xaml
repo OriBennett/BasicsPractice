@@ -9,7 +9,8 @@
       Title="Game">
 
     <Canvas x:Name="gameCanvas">
-        
+        <Image Source="/Images/sugar-skull-7441361_1280.bmp" Width="50" Canvas.Left="740" Canvas.Top="374" />
+
 
         <TextBlock x:Name="gameText" Text="Game, Fun!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
     </Canvas>
