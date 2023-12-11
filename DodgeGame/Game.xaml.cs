@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,5 +76,42 @@ namespace DodgeGame
         //        baddies[i] = new Image(/*BaddiesImage*/) {/*Random location in Canvas Not on Goodie*/ };
         //    }
         //}
+
+        public void GoodieMove(Key key)
+        {
+            
+        }
+
+        private void gameCanvas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1]) - 1); //This sort of works
+                ChangeText("Left");
+            }
+            else if (e.Key == Key.Right)
+            {
+                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1])+1); //This sort of works
+                ChangeText("Right");
+            }
+            else if (e.Key == Key.Up)
+            {
+                Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) - 1); //This loses focus
+            }
+            else if (e.Key == Key.Down)
+            {
+                Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) + 1); //This loses focus
+            }
+            else if (e.Key == Key.Space)
+            {
+                Canvas.SetTop(gameCanvas.Children[1], Random.Shared.Next(0, 374));
+                Canvas.SetLeft(gameCanvas.Children[1], Random.Shared.Next(0, 740)); //This works well
+            }
+        }
+
+        private void gameCanvas_Loaded(object sender, RoutedEventArgs e)
+        {
+            gameCanvas.Focus();
+        }
     }
 }
