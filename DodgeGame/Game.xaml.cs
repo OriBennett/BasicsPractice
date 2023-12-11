@@ -64,6 +64,7 @@ namespace DodgeGame
                 Canvas.SetLeft(baddies[i], Random.Shared.Next(0, 740));
             }            
         }
+
         //public void InitializeBoardFromSave(/*Some sort of data object with locations for goddie and baddies*/)
         //{
         //    Image goodie = new Image(/*goodieImagae*/) {/*Random location in Canvas*/ };
