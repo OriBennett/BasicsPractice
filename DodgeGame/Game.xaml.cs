@@ -86,27 +86,32 @@ namespace DodgeGame
         {
             if (e.Key == Key.Left)
             {
-                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1]) - 1); //This sort of works
+                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1]) - 1); //This sort of works and only works every second keydown
                 ChangeText("Left");
+                gameCanvas.Focus();
             }
             else if (e.Key == Key.Right)
             {
-                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1])+1); //This sort of works
+                Canvas.SetLeft(gameCanvas.Children[1], Canvas.GetLeft(gameCanvas.Children[1])+1); //This sort of works and only works every second keydown
                 ChangeText("Right");
+                gameCanvas.Focus();
             }
             else if (e.Key == Key.Up)
             {
                 Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) - 1); //This loses focus
+                gameCanvas.Focus();
             }
             else if (e.Key == Key.Down)
             {
                 Canvas.SetTop(gameCanvas.Children[1], Canvas.GetTop(gameCanvas.Children[1]) + 1); //This loses focus
+                gameCanvas.Focus();
             }
             else if (e.Key == Key.Space)
             {
                 Canvas.SetTop(gameCanvas.Children[1], Random.Shared.Next(0, 374));
                 Canvas.SetLeft(gameCanvas.Children[1], Random.Shared.Next(0, 740)); //This works well
             }
+            gameCanvas.Focus();
         }
 
         private void gameCanvas_Loaded(object sender, RoutedEventArgs e)
