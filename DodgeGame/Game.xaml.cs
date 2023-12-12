@@ -304,6 +304,34 @@ namespace DodgeGame
                     }
                 }
             }
+            CheckWin();
+            CheckLose();
+        }
+        public void CheckWin()
+        {
+            if(gameCanvas.Children.Count == 2 || gameCanvas.Children.Count == 1)
+            {
+                TextBlock winText = new TextBlock();
+                winText.Text = "You Win!";
+                gameCanvas.Children.Add(winText);
+            }
+        }
+        public void CheckLose()
+        {
+            double left = Canvas.GetLeft(gameCanvas.Children[0]);
+            double top = Canvas.GetTop(gameCanvas.Children[0]);
+            for (int i = 1; i < gameCanvas.Children.Count; i++)
+            {                
+                double leftCompare = Canvas.GetLeft(gameCanvas.Children[i]);
+                double topCompare = Canvas.GetTop(gameCanvas.Children[i]);
+                if ((leftCompare >= left && leftCompare < left + 50) && (topCompare >= top && topCompare < top + 50))
+                {
+                    TextBlock loseText = new TextBlock();
+                    loseText.Text = "You Lose";
+                    gameCanvas.Children.Add(loseText);
+                }
+                
+            }
         }
     }
 }
