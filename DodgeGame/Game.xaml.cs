@@ -140,6 +140,31 @@ namespace DodgeGame
             {
                 movingDown = true;
             }
+            else if (e.Key == Key.Space) // jump to random space
+            {
+                Canvas.SetTop(gameCanvas.Children[1], Random.Shared.Next(0, 374));
+                Canvas.SetLeft(gameCanvas.Children[1], Random.Shared.Next(0, 740));
+            }
+            else if (e.Key == Key.PageUp)
+            {
+                movingUp = true;
+                movingRight=true;
+            }
+            else if(e.Key == Key.PageDown) 
+            { 
+                movingDown = true;
+                movingRight = true;            
+            }
+            else if( e.Key == Key.Home)
+            {
+                movingLeft=true;
+                movingUp=true;
+            }
+            else if (e.Key == Key.End)
+            {
+                movingLeft = true;
+                movingDown=true;
+            }
 
             // Handle diagonal movement
             UpdatePosition();
@@ -164,6 +189,27 @@ namespace DodgeGame
             {
                 movingDown = false;
             }
+            else if (e.Key == Key.PageUp)
+            {
+                movingUp = false;
+                movingRight = false;
+            }
+            else if (e.Key == Key.PageDown)
+            {
+                movingDown = false;
+                movingRight = false;
+            }
+            else if (e.Key == Key.Home)
+            {
+                movingLeft = false;
+                movingUp = false;
+            }
+            else if (e.Key == Key.End)
+            {
+                movingLeft = false;
+                movingDown = false;
+            }
+
 
             // Handle diagonal movement
             UpdatePosition();
@@ -171,7 +217,7 @@ namespace DodgeGame
 
         private void UpdatePosition()
         {
-            const double SPEED = 1.0; // Sets goodie speed here
+            const double SPEED = 1.5; // Sets goodie speed here
 
             // Update position based on flags
             if (movingLeft && movingUp)
@@ -218,7 +264,7 @@ namespace DodgeGame
         {
             const double SPEED = 1.0; // Sets Baddies speed here
 
-            for (int i=1; i<=10; i++)
+            for (int i=1; i<=10; i++) //this will need changing because I'm going to remove enemies
             {
                 if (Canvas.GetTop(gameCanvas.Children[i]) < Canvas.GetTop(gameCanvas.Children[0]))
                 {
@@ -238,6 +284,11 @@ namespace DodgeGame
                     Canvas.SetLeft(gameCanvas.Children[i], Canvas.GetLeft(gameCanvas.Children[i]) - SPEED);
                 }            
             }
+            CheckCollisions();
+        }
+        public void CheckCollisions()
+        {
+            // will remove enemies from canvas if they collide, also will give game over if hero has collided
         }
     }
 }
