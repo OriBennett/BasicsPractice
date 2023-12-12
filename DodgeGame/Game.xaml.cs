@@ -264,7 +264,7 @@ namespace DodgeGame
         {
             const double SPEED = 1.0; // Sets Baddies speed here
 
-            for (int i=1; i<=10; i++) //this will need changing because I'm going to remove enemies
+            for (int i=1; i< gameCanvas.Children.Count; i++) 
             {
                 if (Canvas.GetTop(gameCanvas.Children[i]) < Canvas.GetTop(gameCanvas.Children[0]))
                 {
@@ -288,7 +288,22 @@ namespace DodgeGame
         }
         public void CheckCollisions()
         {
-            // will remove enemies from canvas if they collide, also will give game over if hero has collided
+            // will remove enemies from canvas if they collide, also will give game over if hero has collided 
+            for (int i=1; i < gameCanvas.Children.Count-1; i++)
+            {
+                double left = Canvas.GetLeft(gameCanvas.Children[i]);
+                double top = Canvas.GetTop(gameCanvas.Children[i]);
+                for (int j=i+1; j<gameCanvas.Children.Count; j++)
+                {
+                    double leftCompare = Canvas.GetLeft(gameCanvas.Children[j]);
+                    double topCompare = Canvas.GetTop(gameCanvas.Children[j]);
+                    if ((leftCompare >= left && leftCompare < left + 50)&&(topCompare >= top && topCompare < top + 50))
+                    {
+                        gameCanvas.Children.Remove(gameCanvas.Children[j]);
+                        j--;
+                    }
+                }
+            }
         }
     }
 }
