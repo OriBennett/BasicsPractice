@@ -335,8 +335,8 @@ namespace DodgeGame
             if (gameCanvas != null)
             {
                 Directory.CreateDirectory($@"{ROOTPATH}\SaveFolder");
-                var saveFile = File.Create($@"{ROOTPATH}\SaveFolder\Save.txt");
-                saveFile.Close();
+                var saveFile = File.Create($@"{ROOTPATH}\SaveFolder\Save.txt"); // I want to overwrite the file every time I save
+                saveFile.Close(); // Needed to do this so it doesn't crash when writing all lines
                 string[] Positions = new string[gameCanvas.Children.Count];
                 for (int i = 0; i < gameCanvas.Children.Count; i++)
                 {
