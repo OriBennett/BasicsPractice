@@ -31,7 +31,7 @@ namespace DodgeGame
         public Game(string text)
         {
             InitializeComponent();
-            ChangeText(text);
+            InitializeBoard(text);
         }
         public const string ROOTPATH = @"C:\Users\USER\Documents\Homework\Basics Practice\DodgeGame";
 
@@ -68,17 +68,65 @@ namespace DodgeGame
             }            
         }
 
-        //public void InitializeBoardFromSave(/*Some sort of data object with locations for goddie and baddies*/)
-        //{
-        //    Image goodie = new Image(/*goodieImagae*/) {/*Random location in Canvas*/ };
-        //    Image[] baddies = new Image[10];
-
-        //    for (int i = 0; i < baddies.Length; i++)
-        //    {
-        //        baddies[i] = new Image(/*BaddiesImage*/) {/*Random location in Canvas Not on Goodie*/ };
-        //    }
-        //}
+        public void InitializeBoard(string SaveGame)
+        {
+            
+            var saveFile = File.OpenRead($@"{ROOTPATH}\SaveFolder\Save.txt");
+            if (saveFile != null)
+            {
+                saveFile.Close();
                 
+                string[] Positions = File.ReadAllLines($@"{ROOTPATH}\SaveFolder\Save.txt");
+                Image goodie = new Image();
+                goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_1280.bmp", UriKind.Relative));
+                goodie.Width = 50;
+                gameCanvas.Children.Add(goodie);
+                string[] goddiePosition = Positions[0].Split(',');
+                Canvas.SetTop(goodie, double.Parse(goddiePosition[0]));
+                Canvas.SetLeft(goodie, double.Parse(goddiePosition[1]));
+                for (int i = 1; i < Positions.Length; i++)
+                {
+                    Image baddie = new Image();
+                    baddie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/sugar-skull-7441361_1280.bmp", UriKind.Relative));
+                    baddie.Width = 50;
+                    gameCanvas.Children.Add(baddie);
+                    string[] baddiePosition = Positions[i].Split(',');
+                    Canvas.SetTop(baddie, double.Parse(baddiePosition[0]));
+                    Canvas.SetLeft(baddie, double.Parse(baddiePosition[1]));
+                }
+                
+            }
+            else
+            {
+                InitializeBoard();
+            }
+            
+            //Image goodie = new Image();
+            //Image[] baddies = new Image[10];
+            ////BBQPic.Source = new BitmapImage(new Uri(@" / HelloWorld;component/Images/Shipud.bmp", UriKind.Relative)); template for bitmaps
+            //goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_1280.bmp", UriKind.Relative));
+            //goodie.Width = 50;
+
+            //gameCanvas.Children.Add(goodie);
+
+            ////goodie.Parent.SetValue("Top",Random.Shared.Next(0,740)); This didn't work
+            ////goodie.Parent.SetValue("Left",Random.Shared.Next(0,374));
+
+            //Canvas.SetTop(goodie, Random.Shared.Next(0, 374));
+            //Canvas.SetLeft(goodie, Random.Shared.Next(0, 740));
+            //for (int i = 0; i < baddies.Length; i++)
+            //{
+            //    baddies[i] = new Image
+            //    {
+            //        Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/sugar-skull-7441361_1280.bmp", UriKind.Relative))
+            //    };
+            //    baddies[i].Width = 50;
+            //    gameCanvas.Children.Add(baddies[i]);
+            //    Canvas.SetTop(baddies[i], Random.Shared.Next(0, 374));
+            //    Canvas.SetLeft(baddies[i], Random.Shared.Next(0, 740));
+            //}
+        }
+
         //private void gameCanvas_KeyDown(object sender, KeyEventArgs e) //Trying something new
         //{
         //    if (e.Key == Key.Left)
