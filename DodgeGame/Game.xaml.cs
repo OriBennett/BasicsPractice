@@ -342,7 +342,7 @@ namespace DodgeGame
                 {
                     Positions[i] = $@"{Canvas.GetTop(gameCanvas.Children[i])},{Canvas.GetLeft(gameCanvas.Children[i])}";
                 }
-                File.WriteAllLines($@"{ROOTPATH}\SaveFolder\Save.txt", Positions);
+                File.WriteAllLines($@"{ROOTPATH}\SaveFolder\Save.txt", Positions);          
             }
         }
     }
