@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace DodgeGame
 {
@@ -32,6 +33,7 @@ namespace DodgeGame
             InitializeComponent();
             ChangeText(text);
         }
+        public const string ROOTPATH = @"C:\Users\USER\Documents\Homework\Basics Practice\DodgeGame";
 
         public void ChangeText(string text)
         {
@@ -42,7 +44,7 @@ namespace DodgeGame
         {
             Image goodie = new Image();
             Image[] baddies = new Image[10];
-            //BBQPic.Source = new BitmapImage(new Uri(@"/HelloWorld;component/Images/Shipud.bmp", UriKind.Relative)); template for bitmaps
+            //BBQPic.Source = new BitmapImage(new Uri(@" / HelloWorld;component/Images/Shipud.bmp", UriKind.Relative)); template for bitmaps
             goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_1280.bmp",UriKind.Relative));
             goodie.Width = 50;
             
@@ -76,12 +78,7 @@ namespace DodgeGame
         //        baddies[i] = new Image(/*BaddiesImage*/) {/*Random location in Canvas Not on Goodie*/ };
         //    }
         //}
-
-        public void GoodieMove(Key key)
-        {
-            
-        }
-
+                
         //private void gameCanvas_KeyDown(object sender, KeyEventArgs e) //Trying something new
         //{
         //    if (e.Key == Key.Left)
@@ -331,6 +328,21 @@ namespace DodgeGame
                     gameCanvas.Children.Add(loseText);
                 }
                 
+            }
+        }
+        public void Save()
+        {
+            if (gameCanvas != null)
+            {
+                Directory.CreateDirectory($@"{ROOTPATH}\SaveFolder");
+                var saveFile = File.Create($@"{ROOTPATH}\SaveFolder\Save.txt");
+                saveFile.Close();
+                string[] Positions = new string[gameCanvas.Children.Count];
+                for (int i = 0; i < gameCanvas.Children.Count; i++)
+                {
+                    Positions[i] = $@"{Canvas.GetTop(gameCanvas.Children[i])},{Canvas.GetLeft(gameCanvas.Children[i])}";
+                }
+                File.WriteAllLines($@"{ROOTPATH}\SaveFolder\Save.txt", Positions);
             }
         }
     }

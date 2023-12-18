@@ -38,6 +38,10 @@ namespace DodgeGame
         private void menuSave_Click(object sender, RoutedEventArgs e)
         {
             //Will save the game to a file
+            if (gameFrame.Content as Game != null)
+            {
+                (gameFrame.Content as Game).Save();
+            }
         }
     }
 }
