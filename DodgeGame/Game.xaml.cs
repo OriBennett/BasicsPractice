@@ -70,33 +70,39 @@ namespace DodgeGame
 
         public void InitializeBoard(string SaveGame)
         {
-            
-            var saveFile = File.OpenRead($@"{ROOTPATH}\SaveFolder\Save.txt");
-            if (saveFile != null)
+            try
             {
-                saveFile.Close();
-                
-                string[] Positions = File.ReadAllLines($@"{ROOTPATH}\SaveFolder\Save.txt");
-                Image goodie = new Image();
-                goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_1280.bmp", UriKind.Relative));
-                goodie.Width = 50;
-                gameCanvas.Children.Add(goodie);
-                string[] goddiePosition = Positions[0].Split(',');
-                Canvas.SetTop(goodie, double.Parse(goddiePosition[0]));
-                Canvas.SetLeft(goodie, double.Parse(goddiePosition[1]));
-                for (int i = 1; i < Positions.Length; i++)
+                var saveFile = File.OpenRead($@"{ROOTPATH}\SaveFolder\Save.txt");
+                if (saveFile != null)
                 {
-                    Image baddie = new Image();
-                    baddie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/sugar-skull-7441361_1280.bmp", UriKind.Relative));
-                    baddie.Width = 50;
-                    gameCanvas.Children.Add(baddie);
-                    string[] baddiePosition = Positions[i].Split(',');
-                    Canvas.SetTop(baddie, double.Parse(baddiePosition[0]));
-                    Canvas.SetLeft(baddie, double.Parse(baddiePosition[1]));
+                    saveFile.Close();
+
+                    string[] Positions = File.ReadAllLines($@"{ROOTPATH}\SaveFolder\Save.txt");
+                    Image goodie = new Image();
+                    goodie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/beer-7370681_1280.bmp", UriKind.Relative));
+                    goodie.Width = 50;
+                    gameCanvas.Children.Add(goodie);
+                    string[] goddiePosition = Positions[0].Split(',');
+                    Canvas.SetTop(goodie, double.Parse(goddiePosition[0]));
+                    Canvas.SetLeft(goodie, double.Parse(goddiePosition[1]));
+                    for (int i = 1; i < Positions.Length; i++)
+                    {
+                        Image baddie = new Image();
+                        baddie.Source = new BitmapImage(new Uri(@"/DodgeGame;component/Images/sugar-skull-7441361_1280.bmp", UriKind.Relative));
+                        baddie.Width = 50;
+                        gameCanvas.Children.Add(baddie);
+                        string[] baddiePosition = Positions[i].Split(',');
+                        Canvas.SetTop(baddie, double.Parse(baddiePosition[0]));
+                        Canvas.SetLeft(baddie, double.Parse(baddiePosition[1]));
+                    }
+
                 }
-                
+                else
+                {
+                    InitializeBoard();
+                }
             }
-            else
+            catch
             {
                 InitializeBoard();
             }
