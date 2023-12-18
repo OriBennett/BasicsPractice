@@ -70,7 +70,7 @@ namespace DodgeGame
 
         public void InitializeBoard(string SaveGame)
         {
-            try
+            try //this feels smelly, There is probably some easy logic that I can put here instead of try-catch
             {
                 var saveFile = File.OpenRead($@"{ROOTPATH}\SaveFolder\Save.txt");
                 if (saveFile != null)
