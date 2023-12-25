@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace FightingGame
 {
-    class CanTeleport : Teleports
+    class CanTeleport : ITeleports
     {
         public string teleport()
         {
             return "Teleports away";
         }
+
+        // Could this and CantTeleport be an Enum? Probably. But this was to practice the basics of interfaces
     }
 }

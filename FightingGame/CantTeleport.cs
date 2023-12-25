@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightingGame
 {
-    internal class CantTeleport : Teleports
+    internal class CantTeleport : ITeleports
     {
         public string teleport()
         {

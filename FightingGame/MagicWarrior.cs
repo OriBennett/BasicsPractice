@@ -9,7 +9,7 @@ namespace FightingGame
     internal class MagicWarrior : Warrior
     {
         int teleportChance = 0;
-        public Teleports Teleports = new CanTeleport(); //so can be changed when teleportation is blocked
+        public ITeleports Teleports = new CanTeleport(); //so can be changed when teleportation is blocked
 
         public MagicWarrior(int teleportChance = 0, string name = "Warrior", double health=0, double attkMax = 0, double blockMax = 0) 
             : base(name, health, attkMax, blockMax)
