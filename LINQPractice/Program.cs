@@ -68,6 +68,30 @@ namespace LINQPractice
             {
                 Console.WriteLine("{0} owns {1}",i.OwnerName,i.AnimalName);
             }
+
+            var groupJoin = from owner in owners
+                            orderby owner.OwnerID
+                            join animal in farmAnimals on owner.OwnerID
+                            equals animal.AnimalID into ownerGroup
+                            select new
+                            {
+                                Owner = owner.Name,
+                                Animals = from animalByOwner in ownerGroup
+                                          orderby animalByOwner.Name
+                                          select animalByOwner
+                            };
+            int totalAnimals = 0;
+            Console.WriteLine();
+            foreach (var ownerGroup in groupJoin) 
+            {
+                Console.WriteLine(ownerGroup.Owner);
+                foreach (var animal in ownerGroup.Animals)
+                {
+                    totalAnimals++;
+                    Console.WriteLine($"* {animal.Name}");
+                }
+            }
+            Console.WriteLine($"Total animals: {totalAnimals}");
         }
     }
 }
